@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disease Information - SymptoSage</title>
+
+    <style>
+       *{
+            margin: 0;
+            padding: 0;
+        }
+        body {
+           box-sizing: border-box;
+            font-family: 'Gill Sans MT', sans-serif;
+            min-height: 100vh;
+            color: #333;
+            background-image: url('static/images/background.jpg');
+            background-size: cover;
+        }
+         #header {
+            display: flex;
+            align-items:center;
+            padding:8px;
+            text-align:center;
+           background-color: #5438ba;
+            justify-content: center;
+            align-items: center;
+            border-bottom-right-radius:64% ;
+            border-bottom-left-radius:64% ;
+            
+         }
+
+        #header h3 {
+            
+            margin: 0;
+            
+            font-size: 70px;
+            font-weight: 700;
+            color:transparent;
+            -webkit-text-stroke: 1px white;
+            background: url(static/images/header.png);
+            -webkit-background-clip :text ;
+          
+            background-position: 0 0;
+            animation: rep 4s linear infinite;
+        }
+        @keyframes rep{
+            100%{
+                background-position: 200px 0;
+            }
+        }
+        #header h7 {
+            
+            margin: 0;
+            color: #fff;
+            font-size: 12px;
+
+        }
+        
+        .disease-info {
+            max-width: 400px;
+            margin: 60px auto;
+            margin-left: 60%;
+            padding: 10px;
+            background-color: #ffffffb5;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.586);
+            text-align: center;
+        }
+
+        .disease-name {
+            height:60px;
+            background-color:#ffab3eb8;
+            color: #fff;
+            padding: 10px;
+            border-radius: 20px;
+            /* margin-bottom: 15px;  */
+            
+        }
+        .disease-name h2{
+            margin-top: 05%;
+        }
+        .disease-description {
+            color: #333;
+            margin-bottom:0px;
+        }
+
+        .solution-box {
+             
+            padding-top: 0;
+            background-color:#e9293fb8;
+            height:100px;
+            text-align: start;
+            color: #fff;
+            padding:10px;
+            border-radius: 20px;
+        }
+
+        .solution-description {
+            color: #333;
+            margin-top: 0px;
+        } 
+
+        #footer {
+            background-color: #ffa93fb4; 
+            padding: 5px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        #footer p {
+            margin: 0;
+            color: #fff;
+            text-align: center;
+            font-size: 12px;
+        } 
+       
+    </style>
+</head>
+
+<body>
+
+    <div id="header">
+        <div>
+            <h3>SymptoSage</h3>
+            <h7>AI/ML Wellness Classifier</h7>
+        </div>
+    </div>
+
+    <div class="disease-info">
+        <div class="disease-name">
+            <h2> {{ prediction_text }} </h2>
+        </div>
+
+        <!-- <div class="disease-description">
+            <p>Disease Description goes here. Provide detailed information about the disease.</p>
+        </div> -->
+
+    </div>
+    <div class="disease-info">
+    <div class="solution-box">
+        <h3>Solution</h3>
+        <p>{{ sol_text }}</p>
+    </div>
+    </div>
+
+    <!-- <div class="solution-description">
+        <p>Additional details about the solutions can be added here.</p>
+    </div> -->
+
+    <div id="footer">
+        <p>Machine Learning Project by Nishant Narjinary</p>
+        <p>Use Of Natural Language Processing & Naive Bayes On Survey Data</p>
+    </div>
+
+</body>
+
+</html>

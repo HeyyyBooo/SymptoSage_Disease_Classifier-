@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SymptoSage: AI Wellness Classifier</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body {
+           box-sizing: border-box;
+            font-family: 'Gill Sans MT', sans-serif;
+            min-height: 100vh;
+            color: #333;
+            background-image: url('static/images/background.jpg');
+            background-size: cover;
+        }
+         #header {
+            display: flex;
+            align-items:center;
+            padding:8px;
+            text-align:center;
+           background-color: #5438ba;
+            justify-content: center;
+            align-items: center;
+            border-bottom-right-radius:64% ;
+            border-bottom-left-radius:64% ;
+            
+         }
+
+         #header h3 {
+            
+            margin: 0;
+            
+            font-size: 70px;
+            font-weight: 700;
+            color:transparent;
+            -webkit-text-stroke: 1px white;
+            background: url(static/images/header.png);
+            -webkit-background-clip :text ;
+          
+            background-position: 0 0;
+            animation: rep 4s linear infinite;
+        }
+        @keyframes rep{
+            100%{
+                background-position: 200px 0;
+            }
+        }
+        #header h7 {
+            
+            margin: 0;
+            color: #fff;
+            font-size: 12px;
+
+        }
+
+        .login {
+            max-width: 400px;
+            margin: 140px auto;
+            margin-left: 60%;
+            height:350px;
+            padding: 20px;
+            background:transparent;
+            backdrop-filter: blur(4px);
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.586);
+            text-align: center;
+            
+        }
+       
+        form {
+            margin-top: 50px;
+        }
+
+        label {
+            font-size: 36px;
+            color:WHITE;
+            text-shadow: 2px 2px 3px  #000000;
+            
+        }
+
+        input {
+            width: calc(100% - 20px);
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.386);
+            height:20px;
+           margin-top: 30px;
+            width:90%;
+            
+            display:block;
+            /* white-space: pre-wrap;  */
+            resize: vertical;
+        }
+        
+        button {
+            margin-top: 20px;
+            font-size: 14px;
+            background-color:#ffaa3f ;
+            color: #fff;
+            padding: 13px 50px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            transition:background-color 0.3s,transform 0.3s,box-shadow 0.3s;
+        }
+
+        button:hover {
+            background-color:#5438ba;
+            transition-timing-function:ease-in-out; 
+            transform: scale(1.03,1.03);
+            box-shadow: 0 0 5px rgb(86, 38, 38);
+        } 
+
+         #footer {
+            background-color: #ffa93fb4; 
+            padding: 5px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        #footer p {
+            margin: 0;
+            color: #fff;
+            text-align: center;
+            font-size: 12px;
+        } 
+
+
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <div id="header">
+        <div>
+            <h3>SymptoSage</h3>
+            <h7>AI/ML Wellness Classifier</h7>
+        </div>
+    </div>
+
+    <div class="login">
+        <form action="{{ url_for('predict')}}" method="post">
+            <label for="userInput">Enter Your Symptoms :</label>
+            <input type="text" id="userInput" name="userInput" required>
+           
+            <div class="button" align="center">
+                <button type="submit" class="btn btn-primary btn-block btn-large"><strong>Submit</strong></button>
+            </div>
+        </form>
+
+        <!-- <div>
+            <p>{{ prediction_text }}</p>
+        </div> -->
+    </div>
+
+    <div id="footer">
+        <p>Machine Learning Project by Nishant Narjinary</p>
+        <p>Use Of Natural Language Processing & Naive Bayes Classification On Survey Data</p>
+    </div>
+
+</div>
+    
+</body>
+
+</html>
